@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+<div style="width: 500px">
+    <form action="/detect" enctype="multipart/form-data" method="post">
+        <input type="file" name="userfile" accept="image/*">
+        <!-- サムネイル表示領域 -->
+        <div style="width: 500px">
+            <canvas id="canvas" width="160" height="120"></canvas>
+        </div>
+    
+        <input type="submit" value="Upload" class="form-control btn btn-primary">
+    </form>
+</div>
+
+<div id="error" style="width: 500px">
+    
+</div>
+
+  {% if img_url %}
+<p><img src="{{ img_url }}"></p>
+  {% endif %}
+{% endblock %}
+
+
+
